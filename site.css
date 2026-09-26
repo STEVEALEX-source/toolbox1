@@ -1,0 +1,16 @@
+* { box-sizing: border-box; }
+html, body, #app { width: 100%; height: 100%; min-height: 100%; margin: 0; overflow: hidden; background: #03050b; }
+body { color: #e8e2d0; font-family: Georgia, 'Times New Roman', serif; }
+#canvas { display: block; width: 100%; height: 100%; border: 0; outline: 0; background: #03050b; cursor: grab; touch-action: none; }
+#canvas:active { cursor: grabbing; }
+#toolbox-home { position: fixed; z-index: 4; left: 14px; top: 8px; padding: 5px 9px; border: 1px solid rgba(201,169,110,.38); background: rgba(3,5,11,.82); color: #c9a96e; font: 11px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .05em; text-decoration: none; }
+#toolbox-home:hover, #toolbox-home:focus-visible { background: rgba(48,38,22,.96); color: #f0d39b; }
+#loading { position: fixed; inset: 0; z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: #03050b; color: #c9a96e; transition: opacity .45s ease; }
+#loading.ready { opacity: 0; pointer-events: none; }
+#loading p { margin: 12px 0 0; font: 11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .28em; text-transform: uppercase; }
+#loading span { color: #8a8578; font: 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; }
+.loading-mark { width: 40px; height: 40px; border: 1px solid rgba(201,169,110,.22); border-top-color: #c9a96e; border-radius: 50%; animation: orbit 1.2s linear infinite; box-shadow: 0 0 24px rgba(201,169,110,.08); }
+#error { position: fixed; inset: 0; z-index: 10; padding: 10vh 10vw; background: #03050b; color: #e8e2d0; font: 16px/1.7 Georgia, serif; }
+#error[hidden] { display: none; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+@media (max-width: 700px) { #loading p { letter-spacing: .18em; } }
